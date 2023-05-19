@@ -29,6 +29,31 @@ namespace AcessoBD
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = String.Format("SELECT * FROM estados WHERE codigo = {0}",
                 txtCodigo.Text);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Conexao.abreConexao();
+            MySqlDataReader dr;
+            try
+            {
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCodigo.Text = dr["codigo"].ToString();
+                    txtNome.Text = dr["nome"].ToString();
+                    txtUF.Text = dr["uf"].ToString();
+                }
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexao.fechaConexao();
+            }
         }
+
     }
 }
