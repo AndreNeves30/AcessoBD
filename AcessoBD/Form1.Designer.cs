@@ -30,11 +30,11 @@ namespace AcessoBD
         private void InitializeComponent()
         {
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtUF = new System.Windows.Forms.TextBox();
+            this.lblUF = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,48 +44,50 @@ namespace AcessoBD
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Location = new System.Drawing.Point(27, 9);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(59, 23);
+            this.lblCodigo.Size = new System.Drawing.Size(73, 23);
             this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "label1";
+            this.lblCodigo.Text = "Código :";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(31, 35);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(55, 31);
+            this.txtCodigo.TabIndex = 1;
             // 
-            // textBox2
+            // txtNome
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 31);
-            this.textBox2.TabIndex = 3;
+            this.txtNome.Location = new System.Drawing.Point(31, 111);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.ReadOnly = true;
+            this.txtNome.Size = new System.Drawing.Size(263, 31);
+            this.txtNome.TabIndex = 3;
             // 
-            // label2
+            // lblNome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(27, 85);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(148, 23);
+            this.lblNome.TabIndex = 2;
+            this.lblNome.Text = "Nome do Estado :";
             // 
-            // textBox3
+            // txtUF
             // 
-            this.textBox3.Location = new System.Drawing.Point(31, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 31);
-            this.textBox3.TabIndex = 5;
+            this.txtUF.Location = new System.Drawing.Point(31, 192);
+            this.txtUF.Name = "txtUF";
+            this.txtUF.ReadOnly = true;
+            this.txtUF.Size = new System.Drawing.Size(55, 31);
+            this.txtUF.TabIndex = 5;
             // 
-            // label3
+            // lblUF
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 166);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.lblUF.AutoSize = true;
+            this.lblUF.Location = new System.Drawing.Point(27, 166);
+            this.lblUF.Name = "lblUF";
+            this.lblUF.Size = new System.Drawing.Size(140, 23);
+            this.lblUF.TabIndex = 4;
+            this.lblUF.Text = "Unidade Federal";
             // 
             // btnSair
             // 
@@ -118,11 +120,11 @@ namespace AcessoBD
             this.ClientSize = new System.Drawing.Size(334, 361);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUF);
+            this.Controls.Add(this.lblUF);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
             this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -136,11 +138,11 @@ namespace AcessoBD
         #endregion
 
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtUF;
+        private System.Windows.Forms.Label lblUF;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnBuscar;
     }
