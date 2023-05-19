@@ -22,7 +22,24 @@ namespace AcessoBD
             {
                 if (cn.State.ToString() == "Closed")
                 {
+                    cn.Open();
+                }
+            }
+            catch (MySqlException ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+            return cn;
+        }
+
+        public static void fechaConexao()
+        {
+            try
+            {
+                if (cn.State.ToString() == "Open")
+                {
+                    cn.Close();
                 }
             }
             catch (MySqlException ex)
