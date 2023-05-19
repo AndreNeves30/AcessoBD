@@ -36,7 +36,7 @@ namespace AcessoBD
             this.txtUF = new System.Windows.Forms.TextBox();
             this.lblUF = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnPesquisa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -100,25 +100,27 @@ namespace AcessoBD
             this.btnSair.Text = "&Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnBuscar
+            // btnPesquisa
             // 
-            this.btnBuscar.Image = global::AcessoBD.Properties.Resources.search;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(252, 269);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(70, 70);
-            this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "&Busca";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Image = global::AcessoBD.Properties.Resources.search;
+            this.btnPesquisa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPesquisa.Location = new System.Drawing.Point(252, 269);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(70, 70);
+            this.btnPesquisa.TabIndex = 7;
+            this.btnPesquisa.Text = "&Busca";
+            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // frmAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 361);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.txtUF);
             this.Controls.Add(this.lblUF);
@@ -144,7 +146,7 @@ namespace AcessoBD
         private System.Windows.Forms.TextBox txtUF;
         private System.Windows.Forms.Label lblUF;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnPesquisa;
     }
 }
 
