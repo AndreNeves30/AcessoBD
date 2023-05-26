@@ -38,6 +38,15 @@ namespace AcessoBD
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                 {
                     int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Ação realizada com exito.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao realizar essa ação.");
+                    }
+                    cmd.Dispose();
                 }
 
             }
@@ -85,8 +94,28 @@ namespace AcessoBD
                 Conexao.fechaConexao();
             }
         }
+
         #endregion
 
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            String apaga = String.Format(
+                "DELETE FROM estados WHERE codigo = {0}",txtCodigo.Text);
+            modifica(apaga);
+        }
 
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            String vsf =  "INSERT INTO estados VALUES('" + txtCodigo.Text + "','" + txtNome.Text + "'," + txtUF.Text + "')";
+
+            String novo = String.Format(" INSERT INTO estados VALUES('{0}','{1}','{2}')", txtCodigo.Text, txtNome.Text, txtUF.Text);
+
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            String atualiza = String.Format("UPDATE estados SET nome='{0}', uf='{1}' WHERE codigo= '{2}'",
+                txtNome.Text, txtUF.Text, txtCodigo.Text);
+        }
     }
 }

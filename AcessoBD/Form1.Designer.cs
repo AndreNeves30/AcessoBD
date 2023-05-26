@@ -62,7 +62,6 @@ namespace AcessoBD
             // 
             this.txtNome.Location = new System.Drawing.Point(31, 111);
             this.txtNome.Name = "txtNome";
-            this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(263, 31);
             this.txtNome.TabIndex = 3;
             // 
@@ -79,7 +78,6 @@ namespace AcessoBD
             // 
             this.txtUF.Location = new System.Drawing.Point(31, 192);
             this.txtUF.Name = "txtUF";
-            this.txtUF.ReadOnly = true;
             this.txtUF.Size = new System.Drawing.Size(55, 31);
             this.txtUF.TabIndex = 5;
             // 
@@ -129,6 +127,7 @@ namespace AcessoBD
             this.btnAtualizar.Text = "A&tt";
             this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnNovo
             // 
@@ -141,6 +140,7 @@ namespace AcessoBD
             this.btnNovo.Text = "&Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnApagar
             // 
@@ -153,6 +153,7 @@ namespace AcessoBD
             this.btnApagar.Text = "&Apaga";
             this.btnApagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // frmAcesso
             // 
