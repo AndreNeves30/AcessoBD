@@ -37,6 +37,9 @@ namespace AcessoBD
             this.lblUF = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnPesquisa = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnApagar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -115,11 +118,50 @@ namespace AcessoBD
             this.btnPesquisa.UseVisualStyleBackColor = true;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Image = global::AcessoBD.Properties.Resources.atualizar;
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAtualizar.Location = new System.Drawing.Point(21, 269);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(70, 70);
+            this.btnAtualizar.TabIndex = 8;
+            this.btnAtualizar.Text = "A&tt";
+            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::AcessoBD.Properties.Resources.adicionar;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNovo.Location = new System.Drawing.Point(97, 269);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(70, 70);
+            this.btnNovo.TabIndex = 9;
+            this.btnNovo.Text = "&Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.Image = global::AcessoBD.Properties.Resources.erase;
+            this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnApagar.Location = new System.Drawing.Point(176, 269);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(70, 70);
+            this.btnApagar.TabIndex = 10;
+            this.btnApagar.Text = "&Apaga";
+            this.btnApagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnApagar.UseVisualStyleBackColor = true;
+            // 
             // frmAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 361);
+            this.Controls.Add(this.btnApagar);
+            this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.txtUF);
@@ -147,6 +189,9 @@ namespace AcessoBD
         private System.Windows.Forms.Label lblUF;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnApagar;
     }
 }
 
