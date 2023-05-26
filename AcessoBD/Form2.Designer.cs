@@ -43,6 +43,7 @@ namespace AcessoBD
             this.rdbM = new System.Windows.Forms.RadioButton();
             this.rdbF = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblResul = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnApagar
@@ -173,11 +174,28 @@ namespace AcessoBD
             this.rdbF.Text = "F";
             this.rdbF.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 3000;
+            // 
+            // lblResul
+            // 
+            this.lblResul.AutoSize = true;
+            this.lblResul.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResul.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblResul.Location = new System.Drawing.Point(108, 236);
+            this.lblResul.Name = "lblResul";
+            this.lblResul.Size = new System.Drawing.Size(116, 29);
+            this.lblResul.TabIndex = 24;
+            this.lblResul.Text = "SUCESSO";
+            this.lblResul.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 378);
+            this.Controls.Add(this.lblResul);
             this.Controls.Add(this.rdbF);
             this.Controls.Add(this.rdbM);
             this.Controls.Add(this.btnApagar);
@@ -212,5 +230,6 @@ namespace AcessoBD
         private System.Windows.Forms.RadioButton rdbM;
         private System.Windows.Forms.RadioButton rdbF;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblResul;
     }
 }
