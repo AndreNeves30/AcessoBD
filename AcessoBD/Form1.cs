@@ -24,6 +24,37 @@ namespace AcessoBD
             Application.Exit();
         }
 
+        #region Método modifica (para DELETE , UPDATE e INSERT)
+
+        private void modifica(String sql)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = sql;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = Conexao.abreConexao(); 
+            try
+            {
+                if (MessageBox.Show("Deseja executar esse ação?", "Atenção",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                {
+                    int result = cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conexao.fechaConexao();
+            }
+        }
+
+        #endregion
+
+        #region botão de Pesquisa
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -54,6 +85,8 @@ namespace AcessoBD
                 Conexao.fechaConexao();
             }
         }
+        #endregion
+
 
     }
 }
