@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-
 namespace AcessoBD
 {
-    public partial class frmAcesso : Form
+    public partial class Form2 : Form
     {
-        public frmAcesso()
+        public Form2()
         {
             InitializeComponent();
         }
@@ -31,11 +30,11 @@ namespace AcessoBD
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = sql;
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = Conexao.abreConexao(); 
+            cmd.Connection = Conexao.abreConexao();
             try
             {
                 if (MessageBox.Show("Deseja executar esse ação?", "Atenção",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
@@ -63,8 +62,11 @@ namespace AcessoBD
 
         #endregion
 
-        #region botão de Pesquisa
-        private void btnPesquisa_Click(object sender, EventArgs e)
+       
+
+      
+ #region botão de Pesquisa
+        private void btnPesquisa_Click_1(object sender, EventArgs e)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = String.Format("SELECT * FROM estados WHERE codigo = {0}",
@@ -79,7 +81,7 @@ namespace AcessoBD
                 {
                     txtCodigo.Text = dr["codigo"].ToString();
                     txtNome.Text = dr["nome"].ToString();
-                    txtUF.Text = dr["uf"].ToString();
+                    txt.Text = dr["uf"].ToString();
                 }
                 dr.Close();
                 cmd.Dispose();
@@ -94,19 +96,18 @@ namespace AcessoBD
                 Conexao.fechaConexao();
             }
         }
-
         #endregion
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
             String apaga = String.Format(
-                "DELETE FROM estados WHERE codigo = {0}",txtCodigo.Text);
+                "DELETE FROM estados WHERE codigo = {0}", txtCodigo.Text);
             modifica(apaga);
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            String vsf =  "INSERT INTO estados VALUES('" + txtCodigo.Text + "','" + txtNome.Text + "'," + txtUF.Text + "')";
+            String vsf = "INSERT INTO estados VALUES('" + txtCodigo.Text + "','" + txtNome.Text + "'," + txtUF.Text + "')";
 
             String novo = String.Format(" INSERT INTO estados VALUES('{0}','{1}','{2}')", txtCodigo.Text, txtNome.Text, txtUF.Text);
             modifica(novo);
