@@ -63,12 +63,11 @@ namespace AcessoBD
 
         #endregion
 
-        #region botão de Pesquisa
-        private void btnPesquisa_Click(object sender, EventArgs e)
+        #region Método de Pesquisa
+        private void pesquisar(String sql)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("SELECT * FROM estados WHERE codigo = {0}",
-                txtCodigo.Text);
+            cmd.CommandText = sql;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             MySqlDataReader dr;
@@ -117,6 +116,38 @@ namespace AcessoBD
             String atualiza = String.Format("UPDATE estados SET nome='{0}', uf='{1}' WHERE codigo= '{2}'",
                 txtNome.Text, txtUF.Text, txtCodigo.Text);
             modifica(atualiza);
+        }
+
+        private void btnPrimeiro_Click(object sender, EventArgs e)
+        {
+            String primeiro = "SELECT * FROM estados LIMIT 1";
+            pesquisar(primeiro);
+        }
+
+        private void btnUltimo_Click(object sender, EventArgs e)
+        {
+            String ultimo = "SELECT * FROM estados ORDER BY codigo DESC LIMIT 1 ";
+            pesquisar(ultimo);
+        }
+
+        
+
+        private void frmAcesso_Load(object sender, EventArgs e)
+        {
+            String primeiro = "SELECT * FROM estados LIMIT 1";
+            pesquisar(primeiro);
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            String anterior = String.Format("Select * FROM estados WHERE codigo < {0} ORDER BY codigo DESC LIMIT 1", txtCodigo.Text);
+            pesquisar(anterior);
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            String proximo = String.Format("SELECT * FROM estados WHERE codigo > {0} LIMIT 1 ", txtCodigo.Text);
+            pesquisar(proximo);
         }
     }
 }

@@ -33,7 +33,6 @@ namespace AcessoBD
             this.btnApagar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.lblSexo = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -44,13 +43,17 @@ namespace AcessoBD
             this.rdbF = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblResul = new System.Windows.Forms.Label();
+            this.btnPrimeiro = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnProximo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnApagar
             // 
             this.btnApagar.Image = global::AcessoBD.Properties.Resources.erase;
             this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnApagar.Location = new System.Drawing.Point(170, 281);
+            this.btnApagar.Location = new System.Drawing.Point(246, 365);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(70, 70);
             this.btnApagar.TabIndex = 21;
@@ -63,7 +66,7 @@ namespace AcessoBD
             // 
             this.btnNovo.Image = global::AcessoBD.Properties.Resources.adicionar;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovo.Location = new System.Drawing.Point(91, 281);
+            this.btnNovo.Location = new System.Drawing.Point(167, 365);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(70, 70);
             this.btnNovo.TabIndex = 20;
@@ -76,7 +79,7 @@ namespace AcessoBD
             // 
             this.btnAtualizar.Image = global::AcessoBD.Properties.Resources.atualizar;
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAtualizar.Location = new System.Drawing.Point(15, 281);
+            this.btnAtualizar.Location = new System.Drawing.Point(91, 365);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(70, 70);
             this.btnAtualizar.TabIndex = 19;
@@ -84,19 +87,6 @@ namespace AcessoBD
             this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Image = global::AcessoBD.Properties.Resources.search;
-            this.btnPesquisa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPesquisa.Location = new System.Drawing.Point(246, 281);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(70, 70);
-            this.btnPesquisa.TabIndex = 18;
-            this.btnPesquisa.Text = "&Busca";
-            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click_1);
             // 
             // btnSair
             // 
@@ -183,25 +173,80 @@ namespace AcessoBD
             this.lblResul.AutoSize = true;
             this.lblResul.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResul.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblResul.Location = new System.Drawing.Point(108, 236);
+            this.lblResul.Location = new System.Drawing.Point(172, 186);
             this.lblResul.Name = "lblResul";
             this.lblResul.Size = new System.Drawing.Size(116, 29);
             this.lblResul.TabIndex = 24;
             this.lblResul.Text = "SUCESSO";
             this.lblResul.Visible = false;
             // 
+            // btnPrimeiro
+            // 
+            this.btnPrimeiro.Image = global::AcessoBD.Properties.Resources.primeiro;
+            this.btnPrimeiro.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrimeiro.Location = new System.Drawing.Point(20, 277);
+            this.btnPrimeiro.Name = "btnPrimeiro";
+            this.btnPrimeiro.Size = new System.Drawing.Size(90, 70);
+            this.btnPrimeiro.TabIndex = 25;
+            this.btnPrimeiro.Text = "&Primeiro";
+            this.btnPrimeiro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrimeiro.UseVisualStyleBackColor = true;
+            this.btnPrimeiro.Click += new System.EventHandler(this.btnPrimeiro_Click);
+            // 
+            // btnUltimo
+            // 
+            this.btnUltimo.Image = global::AcessoBD.Properties.Resources.ultimo;
+            this.btnUltimo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUltimo.Location = new System.Drawing.Point(308, 277);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(90, 70);
+            this.btnUltimo.TabIndex = 26;
+            this.btnUltimo.Text = "Último";
+            this.btnUltimo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Image = global::AcessoBD.Properties.Resources.anterior;
+            this.btnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAnterior.Location = new System.Drawing.Point(116, 277);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(90, 70);
+            this.btnAnterior.TabIndex = 27;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnProximo
+            // 
+            this.btnProximo.Image = global::AcessoBD.Properties.Resources.proximo;
+            this.btnProximo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProximo.Location = new System.Drawing.Point(212, 277);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(90, 70);
+            this.btnProximo.TabIndex = 28;
+            this.btnProximo.Text = "Próximo";
+            this.btnProximo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 378);
+            this.ClientSize = new System.Drawing.Size(410, 484);
+            this.Controls.Add(this.btnProximo);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnUltimo);
+            this.Controls.Add(this.btnPrimeiro);
             this.Controls.Add(this.lblResul);
             this.Controls.Add(this.rdbF);
             this.Controls.Add(this.rdbM);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnAtualizar);
-            this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.txtNome);
@@ -220,7 +265,6 @@ namespace AcessoBD
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.TextBox txtNome;
@@ -231,5 +275,9 @@ namespace AcessoBD
         private System.Windows.Forms.RadioButton rdbF;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblResul;
+        private System.Windows.Forms.Button btnPrimeiro;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnProximo;
     }
 }

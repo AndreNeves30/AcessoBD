@@ -66,11 +66,10 @@ namespace AcessoBD
 
       
  #region botão de Pesquisa
-        private void btnPesquisa_Click_1(object sender, EventArgs e)
+        private void pesquisar(String sql)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = String.Format("SELECT * FROM estados WHERE codigo = {0}",
-                txtCodigo.Text);
+            cmd.CommandText = sql;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = Conexao.abreConexao();
             MySqlDataReader dr;
@@ -81,7 +80,24 @@ namespace AcessoBD
                 {
                     txtCodigo.Text = dr["codigo"].ToString();
                     txtNome.Text = dr["nome"].ToString();
-                    txt.Text = dr["uf"].ToString();
+                    String sexo = dr["sexo"].ToString();
+                    if (sexo == "F")
+                    {
+                        rdbF.Checked = true;
+                    }
+                    else if (sexo == "M")
+                    {
+                        rdbM.Checked = true;
+                    }
+                    
+                }
+
+                else 
+                {
+
+                    txtNome.Text = " ";
+                    rdbM.Checked = false;
+                    rdbF.Checked = false;
                 }
                 dr.Close();
                 cmd.Dispose();
@@ -101,23 +117,60 @@ namespace AcessoBD
         private void btnApagar_Click(object sender, EventArgs e)
         {
             String apaga = String.Format(
-                "DELETE FROM estados WHERE codigo = {0}", txtCodigo.Text);
+                "DELETE FROM clientes WHERE codigo = {0}", txtCodigo.Text);
             modifica(apaga);
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            String vsf = "INSERT INTO estados VALUES('" + txtCodigo.Text + "','" + txtNome.Text + "'," + txtUF.Text + "')";
 
-            String novo = String.Format(" INSERT INTO estados VALUES('{0}','{1}','{2}')", txtCodigo.Text, txtNome.Text, txtUF.Text);
+            String sexo;
+            if (rdbF.Checked) { 
+            String vsf = "INSERT INTO clientes VALUES('" + txtCodigo.Text + "','" + txtNome.Text + "'," + rdbF.Text + "')";
+        
+            String novo = String.Format(" INSERT INTO clientes VALUES('{0}','{1}','{2}')", txtCodigo.Text, txtNome.Text, rdbF.Text);
             modifica(novo);
+            }
+            else
+            {
+                String vsf = "INSERT INTO clientes VALUES('" + txtCodigo.Text + "','" + txtNome.Text + "'," + rdbM.Text + "')";
+
+                String novo = String.Format(" INSERT INTO clientes VALUES('{0}','{1}','{2}')", txtCodigo.Text, txtNome.Text, rdbM.Text);
+                modifica(novo);
+
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            String atualiza = String.Format("UPDATE estados SET nome='{0}', uf='{1}' WHERE codigo= '{2}'",
-                txtNome.Text, txtUF.Text, txtCodigo.Text);
+            String atualiza = String.Format("UPDATE clientes SET nome='{0}', uf='{1}' WHERE codigo= '{2}'",
+                txtNome.Text, rdbF.Text, txtCodigo.Text);
             modifica(atualiza);
+        }
+
+        private void btnPrimeiro_Click(object sender, EventArgs e)
+        {
+            String primeiro = "SELECT * FROM clientes LIMIT 1";
+            pesquisar(primeiro);
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            String anterior = String.Format("Select * FROM clientes WHERE codigo < {0} ORDER BY codigo DESC LIMIT 1", txtCodigo.Text);
+            pesquisar(anterior);
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            String proximo = String.Format("SELECT * FROM clientes WHERE codigo > {0} LIMIT 1 ", txtCodigo.Text);
+            pesquisar(proximo);
+        }
+
+        private void btnUltimo_Click(object sender, EventArgs e)
+        {
+            String ultimo = "SELECT * FROM clientes ORDER BY codigo DESC LIMIT 1 ";
+            pesquisar(ultimo);
+
         }
     }
 }

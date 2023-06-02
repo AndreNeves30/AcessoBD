@@ -36,10 +36,13 @@ namespace AcessoBD
             this.txtUF = new System.Windows.Forms.TextBox();
             this.lblUF = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
+            this.btnPrimeiro = new System.Windows.Forms.Button();
+            this.btnProximo = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -94,7 +97,7 @@ namespace AcessoBD
             // 
             this.btnSair.Image = global::AcessoBD.Properties.Resources.exit;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.Location = new System.Drawing.Point(252, 9);
+            this.btnSair.Location = new System.Drawing.Point(308, 12);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(70, 70);
             this.btnSair.TabIndex = 6;
@@ -103,24 +106,11 @@ namespace AcessoBD
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Image = global::AcessoBD.Properties.Resources.search;
-            this.btnPesquisa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPesquisa.Location = new System.Drawing.Point(252, 269);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(70, 70);
-            this.btnPesquisa.TabIndex = 7;
-            this.btnPesquisa.Text = "&Busca";
-            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Image = global::AcessoBD.Properties.Resources.atualizar;
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAtualizar.Location = new System.Drawing.Point(21, 269);
+            this.btnAtualizar.Location = new System.Drawing.Point(75, 348);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(70, 70);
             this.btnAtualizar.TabIndex = 8;
@@ -133,9 +123,9 @@ namespace AcessoBD
             // 
             this.btnNovo.Image = global::AcessoBD.Properties.Resources.adicionar;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovo.Location = new System.Drawing.Point(97, 269);
+            this.btnNovo.Location = new System.Drawing.Point(151, 348);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(70, 70);
+            this.btnNovo.Size = new System.Drawing.Size(78, 70);
             this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -146,24 +136,79 @@ namespace AcessoBD
             // 
             this.btnApagar.Image = global::AcessoBD.Properties.Resources.erase;
             this.btnApagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnApagar.Location = new System.Drawing.Point(176, 269);
+            this.btnApagar.Location = new System.Drawing.Point(235, 348);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(70, 70);
+            this.btnApagar.Size = new System.Drawing.Size(87, 70);
             this.btnApagar.TabIndex = 10;
             this.btnApagar.Text = "&Apaga";
             this.btnApagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnApagar.UseVisualStyleBackColor = true;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
+            // btnPrimeiro
+            // 
+            this.btnPrimeiro.Image = global::AcessoBD.Properties.Resources.primeiro;
+            this.btnPrimeiro.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrimeiro.Location = new System.Drawing.Point(16, 272);
+            this.btnPrimeiro.Name = "btnPrimeiro";
+            this.btnPrimeiro.Size = new System.Drawing.Size(87, 70);
+            this.btnPrimeiro.TabIndex = 11;
+            this.btnPrimeiro.Text = "Primeiro";
+            this.btnPrimeiro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrimeiro.UseVisualStyleBackColor = true;
+            this.btnPrimeiro.Click += new System.EventHandler(this.btnPrimeiro_Click);
+            // 
+            // btnProximo
+            // 
+            this.btnProximo.Image = global::AcessoBD.Properties.Resources.proximo;
+            this.btnProximo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProximo.Location = new System.Drawing.Point(205, 272);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(89, 70);
+            this.btnProximo.TabIndex = 13;
+            this.btnProximo.Text = "Próximo";
+            this.btnProximo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
+            // 
+            // btnUltimo
+            // 
+            this.btnUltimo.Image = global::AcessoBD.Properties.Resources.ultimo;
+            this.btnUltimo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUltimo.Location = new System.Drawing.Point(291, 272);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(87, 70);
+            this.btnUltimo.TabIndex = 14;
+            this.btnUltimo.Text = "Último";
+            this.btnUltimo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Image = global::AcessoBD.Properties.Resources.anterior;
+            this.btnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAnterior.Location = new System.Drawing.Point(109, 272);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(90, 70);
+            this.btnAnterior.TabIndex = 15;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
             // frmAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 361);
+            this.ClientSize = new System.Drawing.Size(390, 430);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnUltimo);
+            this.Controls.Add(this.btnProximo);
+            this.Controls.Add(this.btnPrimeiro);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnAtualizar);
-            this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.txtUF);
             this.Controls.Add(this.lblUF);
@@ -175,6 +220,7 @@ namespace AcessoBD
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAcesso";
             this.Text = "frmAcesso";
+            this.Load += new System.EventHandler(this.frmAcesso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,10 +235,13 @@ namespace AcessoBD
         private System.Windows.Forms.TextBox txtUF;
         private System.Windows.Forms.Label lblUF;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnPrimeiro;
+        private System.Windows.Forms.Button btnProximo;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnAnterior;
     }
 }
 
