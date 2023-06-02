@@ -39,11 +39,18 @@ namespace AcessoBD
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
                     {
-                        MessageBox.Show("Ação realizada com exito.");
+                        lblResul.Visible = true;
+
+                        timer1.Start();
+                        lblResul.Visible = false;
+
                     }
                     else
                     {
-                        MessageBox.Show("Falha ao realizar essa ação.");
+                        lblResul2.Visible = true;
+
+                        timer1.Start();
+                        lblResul2.Visible = false;
                     }
                     cmd.Dispose();
                 }
@@ -143,9 +150,16 @@ namespace AcessoBD
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            String atualiza = String.Format("UPDATE clientes SET nome='{0}', uf='{1}' WHERE codigo= '{2}'",
+            if (rdbF.Checked) {
+                String atualiza = String.Format("UPDATE clientes SET nome='{0}', sexo='{1}' WHERE codigo= '{2}'",
                 txtNome.Text, rdbF.Text, txtCodigo.Text);
             modifica(atualiza);
+            }
+            else { 
+            String atualiza = String.Format("UPDATE clientes SET nome='{0}', sexo='{1}' WHERE codigo= '{2}'",
+            txtNome.Text, rdbM.Text, txtCodigo.Text);
+            modifica(atualiza);
+            }
         }
 
         private void btnPrimeiro_Click(object sender, EventArgs e)
@@ -170,6 +184,21 @@ namespace AcessoBD
         {
             String ultimo = "SELECT * FROM clientes ORDER BY codigo DESC LIMIT 1 ";
             pesquisar(ultimo);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
 
         }
     }

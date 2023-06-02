@@ -47,6 +47,9 @@ namespace AcessoBD
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.lblResul2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnApagar
@@ -167,13 +170,14 @@ namespace AcessoBD
             // timer1
             // 
             this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblResul
             // 
             this.lblResul.AutoSize = true;
             this.lblResul.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResul.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblResul.Location = new System.Drawing.Point(172, 186);
+            this.lblResul.Location = new System.Drawing.Point(224, 198);
             this.lblResul.Name = "lblResul";
             this.lblResul.Size = new System.Drawing.Size(116, 29);
             this.lblResul.TabIndex = 24;
@@ -232,11 +236,40 @@ namespace AcessoBD
             this.btnProximo.UseVisualStyleBackColor = true;
             this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(78, 462);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "André De Sousa Neves e Gabrielle Carvalho G Neves";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 3000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // lblResul2
+            // 
+            this.lblResul2.AutoSize = true;
+            this.lblResul2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResul2.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblResul2.Location = new System.Drawing.Point(241, 198);
+            this.lblResul2.Name = "lblResul2";
+            this.lblResul2.Size = new System.Drawing.Size(86, 29);
+            this.lblResul2.TabIndex = 30;
+            this.lblResul2.Text = "FALHA";
+            this.lblResul2.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 484);
+            this.Controls.Add(this.lblResul2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnUltimo);
@@ -279,5 +312,8 @@ namespace AcessoBD
         private System.Windows.Forms.Button btnUltimo;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnProximo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label lblResul2;
     }
 }

@@ -28,7 +28,7 @@ insert into Estados
 values (10,'Maranhao','MA');
 
 CREATE TABLE Clientes(
-ID INT NOT NULL PRIMARY KEY,
+Codigo INT NOT NULL PRIMARY KEY,
 NOME VARCHAR(50) NOT NULL,
 SEXO CHAR(1) NOT NULL)
 ;
